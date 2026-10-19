@@ -5,7 +5,13 @@ function notImplemented() {
 function addToCart() { return notImplemented(); }
 function changeQuantity() { return notImplemented(); }
 function removeFromCart() { return notImplemented(); }
-function calculateCartSubtotal() { return notImplemented(); }
+function calculateCartSubtotal(cart) {
+    let subtotal = 0;
+    for (let i = 0; i < cart.length; i += 1) {
+        subtotal = subtotal + cart[i].product.price * cart[i].quantity;
+    }
+    return subtotal;
+}
 function calculateOrderTotal() { return notImplemented(); }
 
 const cartApi = { addToCart, changeQuantity, removeFromCart, calculateCartSubtotal, calculateOrderTotal };
