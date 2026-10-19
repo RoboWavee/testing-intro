@@ -4,7 +4,9 @@ function notImplemented() {
 
 function addToCart() { return notImplemented(); }
 function changeQuantity() { return notImplemented(); }
-function removeFromCart() { return notImplemented(); }
+function removeFromCart(cart, productID) {
+    return cart.filter((item) => item.id !== productID);
+}
 function calculateCartSubtotal(cart) {
     let subtotal = 0;
     for (let i = 0; i < cart.length; i += 1) {
